@@ -1,0 +1,122 @@
+body {
+    background-color: #DFE0F3;
+
+}
+
+.circle-button {
+    height: 65px;
+    width: 65px;
+    border-radius: 100%;
+    background: #AD2FB1;
+    border: 5px solid #000000;
+    
+}
+
+.todo-list,
+.header {
+    background-color: #3EBEB7;
+    border-radius: 25px;
+    
+    
+}
+
+.header {
+    display: flex;
+}
+
+.header {
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+
+.task-1 {
+    background-color: #DE8487;
+    border-radius: 15px;
+}
+
+.task-1 input {
+    background-color: #F0FA83;
+}
+
+.task-1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.task-2 {
+    background-color: #2FDE75;
+    border-radius: 15px;
+}
+
+.task-2 input{
+     background-color: #0B62F0;
+     
+}
+
+.task-2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.task-3 {
+    background-color: #2FDE75;
+    border-radius: 15px;
+}
+
+.task-3 input{
+    background-color: #AD2FB1;
+    
+}
+
+.task-3 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer,
+.footer {
+    background-color: #3EBEB7;
+    border-radius: 20px;
+    text-align: center;
+    word-spacing: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
+    }
+
+ 
+.create1 input{
+    background-color:#F0FA83;
+    
+}
+
+
+
+.create2 input{
+    background-color:#0B62F0;
+}
+
+.create3 input{
+    background-color: #AD2FB1;
+    
+    
+}
+
+
+.createAll {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
