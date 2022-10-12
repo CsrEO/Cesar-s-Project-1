@@ -8,30 +8,33 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 
-<body>
+<body onload="initClock()">
 
 
     <div class="content">
-        <div class="header">
-            <div style="text-align: row;" class="time">
-                <h1 class="text-align: center">08:00</h1>
-                <h2>AM</h2>
+
+
+        <div class="dateTime">
+            <div class="date">
+                <span id="dayname">Day</span>,
+                <span id="month">Month</span>
+                <span id="daynum">00</span>,
+                <span id="year">year</span>
             </div>
 
-            <div style="text-align: row;" class="date">
-                
-                <h1>MONDAY</h1>
-                <h2>April 12th, 2022</h2>
-                 
+
+            <div class="time">
+                <span id="hour">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+                <span id="period">AM</span>
             </div>
 
-            <div style="text-align: row;" class="Temp">
-                
-                <h1>70</h1>
-                <h2>Fahrenheit</h2>
-            </div>
         </div>
-    
+
+
+        <br>
+
 
         <div class="Todo-list">
             <div class="task-1">
@@ -41,8 +44,20 @@
                         <h1>GET A/C FIXED</h1>
                         <h2>Created April 2nd, 2022</h2>
                     </center>
+
+                    <div class="actions1">
+
+                        <button class="edit1"> Edit </button>
+
+                        <button class="Delete1"> Delete</button>
+
+
+
+                    </div>
                 </div>
             </div>
+
+            <br>
 
             <div class="task-2">
                 <input class="circle-button" type="button" value="">
@@ -51,46 +66,112 @@
                         <h1>SHOPPIN LIST</h1>
                         <h2>Created April 10th, 2022</h2>
                     </center>
+
+                    <div class="actions2">
+                        <button class="edit1"> Edit </button>
+
+                        <button class="Delete2"> Delete</button>
+
+                    </div>
                 </div>
             </div>
 
+            <br>
+
             <div class="task-3">
-                <input  class="circle-button" type="button" value="">
+                <input class="circle-button" type="button" value="">
                 <div class="task-details">
-                   <center>
-                    <h1>MEETING WITH LEON</h1>
-                    <h2>Created April 11th, 2022</h2>
-                   </center> 
-                   
+                    <center>
+                        <h1>MEETING WITH LEON</h1>
+                        <h2>Created April 11th, 2022</h2>
+                    </center>
+
+                    <div class="actions3">
+                        <button class="edit3"> Edit </button>
+
+                        <button class="Delete3"> Delete</button>
+
+                    </div>
+
                 </div>
             </div>
 
         </div>
 
         <div class="footer">
-            <h1>CREATE</h1>
-                <div class="createAll">
-                    <div class="create1">
-                     <input  class="circle-button" type="button" value="">
-                        <h3>Personal</h3>
-                    </div>
+            <h1>Event</h1>
+            <div class="createAll">
+                <div class="create1">
+                    <input class="circle-button" type="button" value="">
 
-                    <div class="create2">
-                     <input class="circle-button" type="button" value="">
-                        <h3>List</h3>
-                    </div>
-
-                    <div class="create3">
-                        <input class="circle-button" type="button" value="" >
-                            <h3>APPOINMENT</h3>
-                    </div>
+                    <h3>Personal</h3>
                 </div>
 
-        </di>
+                <div class="create2">
+                    <input class="circle-button" type="button" value="">
+                    <h3>List</h3>
+                </div>
 
-        
+                <div class="create3">
+                    <input class="circle-button" type="button" value="">
+                    <h3>APPOINMENT</h3>
+                </div>
+            </div>
+
+        </div>
+
+
     </div>
 
+    <!--Javascritp code-->
+    <script onload="initClock()">
+
+
+        function updateClock() {
+            var now = new Date();
+            var dname = now.getDay(),
+                mo = now.getMonth(),
+                dnum = now.getDate(),
+                yr = now.getFullYear(),
+                hou = now.getHours(),
+                min = now.getMinutes(),
+                sec = now.getSeconds(),
+                pe = "AM";
+
+            if (hou == 0) {
+                hou = 12;
+            }
+            if (hou > 12) {
+                hou = hou - 12;
+                pe = "PM";
+            }
+
+            Number.prototype.pad = function (digits) {
+                for (var n = this.toString(); n.length < digits; n = 0 + n);
+                return n;
+            }
+
+
+            var months = ["January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+            var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+            for (var i = 0; i < ids.length; i++)
+
+                document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+
+
+
+        }
+
+        function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1);
+        }
+
+
+
+    </script>
 </body>
 
 </html>
